@@ -265,8 +265,9 @@ h2 {
     padding-right: 30px; }
     .nav ul a {
       color: #dedede; }
-  .nav .mobile-icon {
-    visibility: hidden; }
+
+.mobile-icon, .close-icon {
+  display: none; }
 
 .row {
   margin: 0; }
@@ -294,6 +295,8 @@ h2 {
     width: 100%; }
   .page-content-wrapper {
     padding-left: 0; }
+  .mobile-icon, .close-icon {
+    display: inline-block; }
   .nav.mobile-nav {
     visibility: hidden;
     position: absolute;
