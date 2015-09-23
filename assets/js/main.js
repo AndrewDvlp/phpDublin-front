@@ -7,6 +7,9 @@ $(document).ready(function () {
 	  var wScroll = $(window).scrollTop();
 	  var Oval;
 	  oVal = wScroll / 50;
+		var invert;
+		invert = wScroll * 70 / 140;
+		invert = Math.min(invert, 70);
 	  console.log(pContainerHeight);
 	  if (wScroll <= pContainerHeight) {
 	    console.log(wScroll);
@@ -15,6 +18,14 @@ $(document).ready(function () {
 			$('.banner').css({
 				"-webkit-filter": "blur("+ oVal +"px)" });
 	  }
+
+		if (wScroll > 110) {
+			$('.mobile-icon').css({"-webkit-filter": "invert("+ invert +"%)"});
+		}
+		if (wScroll < 110) {
+			$('.mobile-icon').css({"-webkit-filter": "invert(0%)"});
+
+		}
 
 		if (wScroll > 128)	{
 			$('.page-nav').addClass('nav-fixed');
@@ -27,4 +38,11 @@ $(document).ready(function () {
 			$('.main').css({"margin-top": "0px"});
 		}
 	});
+
+	$('.mobile-icon').on('click', function(){
+    $('.mobile-nav').css({"visibility":"visible"})
+  });
+	$('.close-icon').on('click', function(){
+    $('.mobile-nav').css({"visibility":"hidden"})
+  });
 });
